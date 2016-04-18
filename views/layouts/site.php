@@ -19,9 +19,13 @@ AppAsset::register($this);
 	<meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <?php $this->head() ?>
     	<style>
         .prf-btn{
@@ -37,181 +41,143 @@ AppAsset::register($this);
 		.ui-datepicker{ z-index:1151 !important; }
 	</style>
 </head>
-<head>
 
-	<!-- Meta, title, CSS, favicons, etc. -->
-	<meta charset="utf-8">
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript">
 
-	<title>Личный кабинет</title>
-	<!-- Bootstrap core CSS -->
-    <link href="<?=$this->sitePath?>css/custom.css" rel="stylesheet">
-	<link href="<?=$this->sitePath?>fonts/css/font-awesome.min.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-    <link href="<?=$this->sitePath?>css/animate.min.css" rel="stylesheet">
-	<!-- Custom styling plus plugins -->
- 	<link href="<?=$this->sitePath?>bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-	<script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
-	<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
-	<!--<script src="js/jquery.min.js"></script>-->
-	<script src="<?=$this->sitePath?>bower_components/moment/min/moment.min.js"></script>
-	<script type="text/javascript" src="<?=$this->sitePath?>bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-	<script src="<?=$this->sitePath?>bower_components/moment/locale/ru.js"></script>
-
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
 </head>
-
-<body class="nav-md">
-<?php $this->beginBody() ?>    
-<div class="container body">
-    <div class="main_container">
-
-        <div class="col-md-3 left_col">
-            <div class="left_col scroll-view">
-			<div class="navbar nav_title" style="border: 0;">
-              <div class="clearfix"></div>
-
-                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-
-                    <div class="menu_section">
-                      <ul class="nav side-menu">
-                        
-                              <!-- profile instagram content -->         
-                <div class="x_content">  
-                    <div class="profile_img">
-                      <!-- end of image cropping -->
-                      <div id="crop-avatar">
-                        <!-- Current avatar -->
-                        <div class="avatar-view" title="Change the avatar">
-                          <img src="<?=$this->sitePath?>images/img.jpg" alt="Avatar">
-                        </div>
-                        <!-- Loading state -->
-                        <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
-                      </div>
-                      <!-- end of image cropping -->
-                    </div>
-                    <h3>StrogunA</h3>
-                    <ul class="list-unstyled user_data">
-                      <li><i class="fa fa-map-marker user-profile-icon"></i> Акаунтов: 2
-                      </li>
-                      <li>
-                      <li class="m-top-xs">
-                        <i class="fa fa-external-link user-profile-icon"></i> Задач: 21
-                      </li>
-                    </ul>
-                    <br />
-                 </div>
-               </div>
-     <!-- profile instagram content -->
-                        
-                      </ul>  
-                   <ul class="nav side-menu">       
-                     <li><a href="/autoposting"><i class="fa fa-camera"></i> Фотоплёнка </a>
-                  <li><a href="#"><i class="fa fa-users"></i> Подписчики </a>
-                  <li><a href="#"><i class="fa fa-users"></i> Подписки </a>
-                  <br><br><br>
-                  <li><a href="/dashboard"><i class="fa fa-tachometer"></i> Dasboard </a>       
-                  <li><a href="#"><i class="fa fa-code"></i> Логи </a>
-                   </ul>  
-                    </div> 
+<body>
+<?php $this->beginBody() ?>      
+<!-- banner -->
+<div id="home" class="banner">
+    <div class="container">
+        <div class="header-info">
+            <div class="header-info-left">
+                <div class="logo">
+                    <a href="#"><img src="" class="img-responsive" alt=""/></a>
                 </div>
-                <!-- /sidebar menu -->
-                <!-- /menu footer buttons -->
-          <div class="sidebar-footer hidden-small">
-            <a href="#" data-toggle="tooltip" data-placement="top" title="Акаунты">
-              <span class="fa fa-users" aria-hidden="true"></span>
-            </a>
-            <a href="/profile/settings" data-toggle="tooltip" data-placement="top" title="Настройки">
-              <span class="fa fa-cogs" aria-hidden="true"></span>
-            </a>
-            <a href="#" data-toggle="tooltip" data-placement="top" title="Lock">
-              <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-            </a>
-            <a href="/profile/logout" data-toggle="tooltip" data-placement="top" title="Выход">
-              <span class="fa fa-sign-in" aria-hidden="true"></span>
-            </a>
-          </div>
-             <!-- /menu footer buttons -->
+            </div>
+            <div class="header-info-right">
+                <div class="header cbp-spmenu-push">
+                    <!--script-nav -->
+                    <script>
+                        $("span.menu").click(function(){
+                            $("ul.navigatoin").slideToggle("300" , function(){
+                            });
+                        });
+                    </script>
+                    <script type="text/javascript">
+                        jQuery(document).ready(function($) {
+                            $(".scroll").click(function(event){
+                                event.preventDefault();
+                                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+                            });
+                        });
+                    </script>
+                    <div class="clearfix"> </div>
+                    <!-- /script-nav -->
+                    <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+                    <script src="js/classie.js"></script>
+                    <script>
+                        /*var	menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+                         showRightPush = document.getElementById( 'showRightPush' ),
+                         body = document.body;
+
+                         showRightPush.onclick = function() {
+                         classie.toggle( this, 'active' );
+                         classie.toggle( body, 'cbp-spmenu-push-toleft' );
+                         classie.toggle( menuRight, 'cbp-spmenu-open' );
+                         disableOther( 'showRightPush' );
+                         };*/
+                    </script>
+                </div>
+
+<style>
+    .error{
+        color: red;
+    }
+</style>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="banner-info">
+            <h1>Сервис продвижения Instagram</h1>
+            <div class="button"><a href="#myModal2" data-toggle="modal">Регистрация</a></div>
+            <div class="button"><a href="#myModal" data-toggle="modal">ВХОД</a></div>
+            <div class="arrow-icon text-center"><a class="scroll" href="#services"><img src="images/arrow.png" alt="" /></a></div>
+
+            <!-- HTML-код модального окна Регистрация-->
+            <div id="myModal2" class="modal fade">
+                <?= Register::widget() ?>
+            </div>
+            <!-- HTML-код модального окна ВХОД -->
+            <div id="myModal" class="modal fade">
+                <?= Login::widget() ?>
             </div>
         </div>
-                    
-<!-- top navigation -->
-                      
-      <div class="top_nav">
-
-        <div class="nav_menu">
-          <nav class="" role="navigation">
-            <div class="nav toggle">
-              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-            </div>
-
-            <ul class="nav navbar-nav navbar-right">
-              <li class="">
-                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                  <img src="<?=$this->sitePath?>images/img.jpg" alt="">Имя пользователя
-                  <span class=" fa fa-angle-down"></span>
-                </a>
-                <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-                  <li><a href="#">
-                  <i class="fa fa-bookmark pull-right"></i> Помощь</a>
-                  </li>
-                  <li><a href="/profile/settings">
-                  <i class="fa fa-cogs pull-right"></i> Настройки профиля</a>
-                  </li>
-                  <li><a href="/profile/logout">
-                  <i class="fa fa-sign-out pull-right"></i> Выход</a>
-                  </li>
-                </ul>
-              </li>
-             <li role="presentation" class="dropdown">
-                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                  <i class="fa fa-lightbulb-o"></i>
-                  <span class="badge bg-green">2</span>
-                </a>
-                <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
-                  <li>
-                    <a>
-                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /> </span>
-                      <span>
-                      <span>Новый дизайн</span>
-                      <span class="time">40 минут назад</span>
-                      </span>
-                      <span class="message"> Рады представить вам новый обнавлённый дизайн.</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /> </span>
-                      <span>
-                      <span>Добавление функции</span>
-                      <span class="time">2 часа назад</span>
-                      </span>
-                      <span class="message"> Рады представить вам новую функцию автопостинг.</span>
-                    </a>
-                  </li>
-             </ul>
-                
-          </nav>
-        </div>
-      </div>
-      <!-- /top navigation -->
-        <?=$this->content()?>
     </div>
-
 </div>
-                              
-    <!-- bootstrap progress js -->
-  <script src="<?=$this->sitePath?>js/progressbar/bootstrap-progressbar.min.js"></script>
-  <script src="<?=$this->sitePath?>js/nicescroll/jquery.nicescroll.min.js"></script>
-  <!-- icheck -->
-  <script src="<?=$this->sitePath?>js/icheck/icheck.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#userLog').submit(function(){
+            $("#login-error").hide();
+            var form = $(this);
+            var data = form.serialize();
+            $.post("/login", data, function(data){
+                console.log(data);
+                if(Number(data) === 1){
+                    window.location.href = '/dashboard';
+                }else{
+                    $("#login-error").show();
+                }
+            });
+            return false;
+        });
 
+        $('#userReg').submit(function(){
+            var form = $(this);
+            var data = form.serialize();
+            $.post("/register", data, function(data){
+                console.log(data);
+                if(Number(data) === 1){
+                    window.location.href = '/';
+                }else{
+                    var obj = JSON.parse(data);
+                    $(".error").css('display', 'none');
+                    for(var i in obj) {
+                        $("#" + i).text(obj[i]);
+                        $("#" + i).css('display', 'block');
+                    }
+                }
+            });
+            return false;
+        });
+    });
+</script>
 
-  <!-- pace -->
-  <script src="<?=$this->sitePath?>js/pace/pace.min.js"></script>
+<!--/header-banner-->
+<!-- services -->
+<div id="services"class="services">
+    <?= Services::widget() ?>
+</div>
 
-  <script type="text/javascript" src="<?=$this->sitePath?>js/moment/moment.min.js"></script>
-  <script type="text/javascript" src="<?=$this->sitePath?>js/datepicker/daterangepicker.js"></script>
-<script src="<?=$this->sitePath?>js/bootstrap.min.js"></script>
-<script src="<?=$this->sitePath?>js/custom.js"></script>
+<!-- //happy clients -->
+<!-- professional team -->
+<div id="team" class="team">
+     <?= Team::widget() ?>
+</div>
+<div class="footer">
+      <?= Footer::widget() ?>
+</div>
+<!-- //footer -->
 <?php $this->endBody() ?>
 </body>
 </html>

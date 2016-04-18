@@ -52,6 +52,12 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionInstapro()
+    {
+        $this->layout = "site";
+        return $this->render('index');
+    }
+    
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
