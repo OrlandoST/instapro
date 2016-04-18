@@ -28,8 +28,8 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <?php $this->head() ?>
-    <script type="text/javascript" src="<?=$this->sitePath?>bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-	  <script src="<?=$this->sitePath?>bower_components/moment/locale/ru.js"></script>
+    <script type="text/javascript" src="/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+	  <script src="/bower_components/moment/locale/ru.js"></script>
     	<style>
         .prf-btn{
         width: 20px;
@@ -61,33 +61,35 @@ AppAsset::register($this);
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 
                     <div class="menu_section">
-                      <ul class="nav side-menu">
+                        <ul class="nav side-menu">
                         
                               <!-- profile instagram content -->         
-                <div class="x_content">  
-                    <?= Profile::widget() ?>
-               </div>
-     <!-- profile instagram content -->
-                        
-                      </ul>  
-                   <ul class="nav side-menu">       
-                     <li><a href="/autoposting"><i class="fa fa-camera"></i> Фотоплёнка </a>
-                  <li><a href="#"><i class="fa fa-users"></i> Подписчики </a>
-                  <li><a href="#"><i class="fa fa-users"></i> Подписки </a>
-                  <br><br><br>
-                  <li><a href="/dashboard"><i class="fa fa-tachometer"></i> Dasboard </a>       
-                  <li><a href="#"><i class="fa fa-code"></i> Логи </a>
-                   </ul>  
+                            <div class="x_content">  
+                                <?= Profile::widget() ?>
+                           </div>
+                            <!-- profile instagram content -->
+                        </ul>  
+                       <ul class="nav side-menu">       
+                            <li><a href="/autoposting"><i class="fa fa-camera"></i> Фотоплёнка </a>
+                              <li><a href="#"><i class="fa fa-users"></i> Подписчики </a>
+                          <li><a href="#"><i class="fa fa-users"></i> Подписки </a>
+                          <br><br><br>
+                          <li><a href="/dashboard"><i class="fa fa-tachometer"></i> Dasboard </a>       
+                          <li><a href="#"><i class="fa fa-code"></i> Логи </a>
+                       </ul>  
                     </div> 
                 </div>
-                <!-- /sidebar menu -->
-                <!-- /menu footer buttons -->
-          <div class="sidebar-footer hidden-small">
-            <?= Sidebarfooter::widget() ?>
-          </div>
+                                <!-- /menu footer buttons -->
+              <div class="sidebar-footer hidden-small">
+                <?= Sidebarfooter::widget() ?>
+              </div>
              <!-- /menu footer buttons -->
             </div>
+            
+                <!-- /sidebar menu -->
+
         </div>
+    </div>
                     
 <!-- top navigation -->
                       
@@ -95,7 +97,14 @@ AppAsset::register($this);
           <?= Topnav::widget() ?>
         </div>
       <!-- /top navigation -->
+      <div class="right_col" role="main">
+        <div class="">
         <?= $content ?>
+        </div>
+        <footer>
+          <div class="clearfix"></div>
+        </footer>
+    </div>        
     </div>
 
 </div>

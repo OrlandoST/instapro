@@ -8,6 +8,11 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\widgets\Footer;
+use app\widgets\Login;
+use app\widgets\Register;
+use app\widgets\Services;
+use app\widgets\Team;
 
 AppAsset::register($this);
 ?>

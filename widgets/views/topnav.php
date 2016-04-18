@@ -7,7 +7,7 @@
 <ul class="nav navbar-nav navbar-right">
  <li class="">
    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-     <img src="<?=$this->sitePath?>images/img.jpg" alt="">Имя пользователя
+     <img src="/images/img.jpg" alt="">Имя пользователя
      <span class=" fa fa-angle-down"></span>
    </a>
    <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">

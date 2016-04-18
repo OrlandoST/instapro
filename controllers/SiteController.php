@@ -55,7 +55,13 @@ class SiteController extends Controller
     public function actionInstapro()
     {
         $this->layout = "site";
-        return $this->render('index');
+        return $this->render('instapro');
+    }
+
+    public function actionDashboard()
+    {
+        $this->layout = "dashboard";
+        return $this->render('dashboard');
     }
     
     public function actionLogin()

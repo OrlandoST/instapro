@@ -3,7 +3,7 @@
      <div id="crop-avatar">
        <!-- Current avatar -->
        <div class="avatar-view" title="Change the avatar">
-         <img src="<?=$this->sitePath?>images/img.jpg" alt="Avatar">
+         <img src="/images/img.jpg" alt="Avatar">
        </div>
        <!-- Loading state -->
        <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
