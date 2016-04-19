@@ -13,6 +13,7 @@ use app\widgets\Login;
 use app\widgets\Register;
 use app\widgets\Services;
 use app\widgets\Team;
+use app\widgets\Menu;
 
 AppAsset::register($this);
 ?>
