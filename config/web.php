@@ -47,6 +47,9 @@ $config = [
         ],
         */
     ],
+    'aliases' => [
+        '@assets' => '/web/',
+    ],
     'params' => $params,
 ];
 

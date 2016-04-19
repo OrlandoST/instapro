@@ -11,9 +11,9 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use app\assets\AppAsset;
+use app\assets\DashboardAsset;
 
-AppAsset::register($this);
+DashboardAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -57,7 +57,7 @@ AppAsset::register($this);
             <div class="left_col scroll-view">
 			<div class="navbar nav_title" style="border: 0;">
               <div class="clearfix"></div>
-
+            </div>
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 
                     <div class="menu_section">
@@ -78,19 +78,18 @@ AppAsset::register($this);
                           <li><a href="#"><i class="fa fa-code"></i> Логи </a>
                        </ul>  
                     </div> 
-                </div>
-                                <!-- /menu footer buttons -->
-              <div class="sidebar-footer hidden-small">
+                                  <div class="sidebar-footer hidden-small">
                 <?= Sidebarfooter::widget() ?>
               </div>
+                </div>
+                                <!-- /menu footer buttons -->
+
              <!-- /menu footer buttons -->
             </div>
             
                 <!-- /sidebar menu -->
-
         </div>
-    </div>
-                    
+
 <!-- top navigation -->
                       
       <div class="top_nav">

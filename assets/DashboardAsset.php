@@ -10,10 +10,10 @@ namespace app\assets;
 use yii\web\AssetBundle;
 
 /**
- * @author Qiang Xue <qiang.xue@gmail.com>
+ * @author Pavel. Orlov
  * @since 2.0
  */
-class AppAsset extends AssetBundle
+class DashboardAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@assets';
@@ -22,7 +22,7 @@ class AppAsset extends AssetBundle
         'css/animate.min.css',
         'css/bootstrap-datetimepicker.css',
         'dist/dropzone.css',
-        'css/style.css',
+        'css/custom.css',
     ];
     public $js = [
         'js/dropzone.js',
