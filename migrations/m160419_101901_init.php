@@ -1,6 +1,7 @@
 <?php
 
 use yii\db\Migration;
+use yii\db\Schema;
 
 class m160419_101901_init extends Migration
 {

@@ -6,7 +6,7 @@ use yii\base\Widget;
 
 class Login extends Widget
 {
-
+    public $model;
     public function init()
     {
 
@@ -14,7 +14,9 @@ class Login extends Widget
 
     public function run()
     {
-        return $this->render('login');
+        return $this->render('login', [
+            'model' => $this->model,
+        ]);
     }
 
 }

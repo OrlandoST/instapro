@@ -7,7 +7,9 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
+use app\models\SignupForm;
 use app\models\ContactForm;
+use yii\helpers\Url;
 
 class SiteController extends Controller
 {
@@ -55,7 +57,12 @@ class SiteController extends Controller
     public function actionInstapro()
     {
         $this->layout = "site";
-        return $this->render('instapro');
+        $reg_model = new SignupForm();
+        $login_model = new LoginForm();
+        return $this->render('instapro', [
+            'register_model' => $reg_model,
+            'register_model' => $login_model,
+        ]);
     }
 
     public function actionDashboard()
@@ -72,18 +79,43 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            $this->redirect(Url::to(['dashboard/index']));
         }
         return $this->render('login', [
             'model' => $model,
         ]);
     }
 
+    public function actionSignup()
+    {
+        $model = new SignupForm();
+        
+        if ($model->load(Yii::$app->request->post())) {
+            if ($user = $model->signup()) {
+                if (Yii::$app->getUser()->login($user)) {
+                    $this->redirect(Url::to(['dashboard/index']));
+                }
+                else{
+                    return $this->render('instapro', [
+                        'model' => $model,
+                    ]);
+                } 
+            }
+            else{
+                throw new \Exception('Error login');
+            } 
+        }
+        //$this->redirect(Url::to(['dashboard/index']));
+        /*return $this->render('signup', [
+            'model' => $model,
+        ]);*/
+    }
+    
     public function actionLogout()
     {
         Yii::$app->user->logout();
 
-        return $this->goHome();
+        
     }
 
     public function actionContact()

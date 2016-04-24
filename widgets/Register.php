@@ -6,7 +6,8 @@ use yii\base\Widget;
 
 class Register extends Widget
 {
-
+    public $model;
+    
     public function init()
     {
 
@@ -14,7 +15,9 @@ class Register extends Widget
 
     public function run()
     {
-        return $this->render('register');
+        return $this->render('register', [
+            'model' => $this->model,
+        ]);
     }
 
 }

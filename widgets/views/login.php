@@ -1,5 +1,5 @@
 <div class="modal-dialog fgt">
-<form id="userLog" action="/" method="post">
+    <?php $form = ActiveForm::begin(['id' => 'form-signup', 'action' => Url::to(['site/login'])]); ?>
     <div class="modal-content rrr">
         <!-- Заголовок модального окна -->
         <div class="modal-header yyy">
@@ -9,13 +9,13 @@
         <!-- Основное содержимое модального окна -->
         <div class="modal-body kjjh">
             <div class="form-group">
-                <label for="username">Имя пользователя или E-mail:</label>
-                <input type="text" class="form-control" name="login">
+                <?= Html::activeLabel($model, 'username', ['label' => 'Имя пользователя или E-mail:']) ?>
+                <?= Html::activeTextInput($model, 'username', ['class'=>'form-control']) ?>
             </div>
 
             <div class="form-group">
-                <label for="password">Пароль:</label>
-                <input type="password" class="form-control" name="password">
+                <?= Html::activeLabel($model, 'password', ['label' => 'Пароль:']) ?>
+                <?= Html::activePasswordInput($model, 'password', ['class'=>'form-control']) ?>
             </div>
             <p style="display: none;" clas="error" id="login-error">Неверный логин или пароль</p>
         </div>
@@ -24,5 +24,5 @@
             <button type="submit" class="btn btn-primary">Войти</button>
         </div>
     </div>
-</form>
+    <?php ActiveForm::end(); ?>
 </div>

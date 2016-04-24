@@ -1,6 +1,7 @@
 <?php
 
 use yii\db\Migration;
+use yii\db\Schema;
 
 class m160419_102140_default_user extends Migration
 {

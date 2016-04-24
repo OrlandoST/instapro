@@ -1,3 +1,8 @@
+<?php
+use yii\helpers\Url;
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+?>
 <div class="modal-dialog fgt fgt1">
 <div class="modal-content rrr rrr1">
     <!-- Заголовок модального окна -->
@@ -10,21 +15,21 @@
     </div>
     <!-- Основное содержимое модального окна -->
     <div class="modal-body kjjh kjjh1">
-    <form id="userReg" action="/" method="post">
+    <?php $form = ActiveForm::begin(['id' => 'form-signup', 'action' => Url::to(['site/signup'])]); ?>
         <div class="form-group">
-            <label for="username">Имя пользователя:</label>
-            <input type="text" class="form-control" name="username">
-            <p class="error" id="username"></p>
+            <?= Html::activeLabel($model, 'username', ['label' => 'Имя пользователя:']) ?>
+            <?= Html::activeTextInput($model, 'username', ['class'=>'form-control']) ?>
+            <?= Html::error($model, 'username') ?>
         </div>
         <div class="form-group">
-            <label for="email">Ваш email:</label>
-            <input type="email" class="form-control" name="email">
-            <p class="error" id="email"></p>
+            <?= Html::activeLabel($model, 'username', ['label' => 'Ваш email:']) ?>
+            <?= Html::activeTextInput($model, 'email', ['class'=>'form-control']) ?>
+            <?= Html::error($model, 'email') ?>
         </div>
         <div class="form-group">
-            <label for="password">Пароль:</label>
-            <input type="password" class="form-control" name="password">
-            <p class="error" id="password"></p>
+            <?= Html::activeLabel($model, 'password', ['label' => 'Пароль:']) ?>
+            <?= Html::activePasswordInput($model, 'password', ['class'=>'form-control']) ?>
+            <?= Html::error($model, 'password') ?>
         </div>
         <div class="form-group">
             <label for="confirm">Повторите пароль:</label>
@@ -42,8 +47,9 @@
             <input type="password" class="form-control" name="Ipassword">
         </div>
         -->
+        <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
         <input type="submit" class="btn btn-success" value="Зарегистрироваться">
-    </form>
+           <?php ActiveForm::end(); ?>
     </div>
     <!-- Футер модального окна -->
     <div class="modal-footer modfoot modfoot1">
