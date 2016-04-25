@@ -1,3 +1,8 @@
+<?php
+use yii\helpers\Url;
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+?>
 <div class="modal-dialog fgt">
     <?php $form = ActiveForm::begin(['id' => 'form-signup', 'action' => Url::to(['site/login'])]); ?>
     <div class="modal-content rrr">

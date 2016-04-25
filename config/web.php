@@ -6,6 +6,7 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'defaultRoute' => 'site/instapro',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -38,14 +39,24 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'enableStrictParsing' => false,
             'rules' => [
+                '<_c:[\w\-]+>' => '<_c>/index',
+                '<_c:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_c>/<_a>',
             ],
         ],
-        */
+        'authManager' => [
+        'class' => 'yii\rbac\PhpManager',
+        'defaultRoles' => ['user','admin'], //здесь прописываем роли
+        //зададим куда будут сохраняться наши файлы конфигураций RBAC
+        'itemFile' => '@app/config/rbac/items.php',
+        'assignmentFile' => '@app/config/rbac/assignments.php',
+        'ruleFile' => '@app/config/rbac/rules.php'
+    ],
     ],
     'aliases' => [
         '@assets' => '/web/',

@@ -6,6 +6,7 @@ use yii\base\Widget;
 
 class Profile extends Widget
 {
+    public $user;
 
     public function init()
     {
@@ -14,7 +15,9 @@ class Profile extends Widget
 
     public function run()
     {
-        return $this->render('profile');
+        return $this->render('profile', [
+            'user' => $this->user,
+        ]);
     }
 
 }

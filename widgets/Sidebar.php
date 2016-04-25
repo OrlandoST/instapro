@@ -4,10 +4,9 @@ namespace app\widgets;
 use Yii;
 use yii\base\Widget;
 
-class Topnav extends Widget
+class Sidebar extends Widget
 {
-    public $user;
-    
+
     public function init()
     {
 
@@ -15,9 +14,7 @@ class Topnav extends Widget
 
     public function run()
     {
-        return $this->render('topnav', [
-            'user' => $this->user,
-        ]);
+        return $this->render('sidebar');
     }
 
 }

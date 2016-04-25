@@ -1,3 +1,8 @@
+<?php
+use yii\helpers\Url;
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+?>
 <div class="nav_menu">
 <div class="" role="navigation">
 <div class="nav toggle">
@@ -7,7 +12,7 @@
 <ul class="nav navbar-nav navbar-right">
  <li class="">
    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-     <img src="/images/img.jpg" alt="">Имя пользователя
+     <img src="/images/img.jpg" alt=""><?= $user->username ?>
      <span class=" fa fa-angle-down"></span>
    </a>
    <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
@@ -17,7 +22,7 @@
      <li><a href="/profile/settings">
      <i class="fa fa-cogs pull-right"></i> Настройки профиля</a>
      </li>
-     <li><a href="/profile/logout">
+     <li><a href="<?=Url::to(['site/logout']) ?>">
      <i class="fa fa-sign-out pull-right"></i> Выход</a>
      </li>
    </ul>

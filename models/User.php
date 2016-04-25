@@ -82,7 +82,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findByUsername($username)
     {
-        return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
+        return static::findOne(['username' => $username]); //, 'status' => self::STATUS_ACTIVE]);
     }
     /**
      * Finds user by password reset token
@@ -182,5 +182,41 @@ class User extends ActiveRecord implements IdentityInterface
         if (strlen($newPassword) !== 0) {
             $this->setPassword($newPassword);
         }
+    }
+    
+    /**
+    * Возвращает массив всех доступных ролей.
+    * @return array
+    */
+    static public function roleArray()
+    {
+        return [
+            self::ROLE_USER,
+            self::ROLE_ADMIN,
+        ];
+    }
+    
+    /**
+    * Возвращает роль пользователя по его ID в случае успеха и `false`  в случае неудачи.
+    * @param integer $id ID пользователя.
+    * @return string|false
+    */
+    static public function getRoleOfUser($id)
+    {
+        return (new Query)
+            ->select('role')
+            ->from(self::tableName())
+            ->where(['id' => $id])
+            ->scalar();
+    }
+    
+    /**
+    * Возвращает роль пользователя или `null`.
+    * @return string|null
+    */
+    public function getRole()
+    {
+        $identity = $this->getIdentity();
+        return $identity !== null ? $identity->role : null;
     }
 }

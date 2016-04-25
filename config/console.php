@@ -22,6 +22,14 @@ $config = [
                 ],
             ],
         ],
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager',
+            'defaultRoles' => ['user','admin'], //здесь прописываем роли
+            //зададим куда будут сохраняться наши файлы конфигураций RBAC
+            'itemFile' => '@app/config/rbac/items.php',
+            'assignmentFile' => '@app/config/rbac/assignments.php',
+            'ruleFile' => '@app/config/rbac/rules.php'
+        ],
         'db' => $db,
     ],
     'params' => $params,

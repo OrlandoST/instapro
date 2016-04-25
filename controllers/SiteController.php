@@ -61,7 +61,7 @@ class SiteController extends Controller
         $login_model = new LoginForm();
         return $this->render('instapro', [
             'register_model' => $reg_model,
-            'register_model' => $login_model,
+            'login_model' => $login_model,
         ]);
     }
 
@@ -74,7 +74,7 @@ class SiteController extends Controller
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
+            $this->redirect(Url::to(['dashboard/index']));
         }
 
         $model = new LoginForm();

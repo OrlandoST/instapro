@@ -11,6 +11,9 @@ use app\models\ContactForm;
 
 class DashboardController extends Controller
 {
+    
+    public $layout = "dashboard";
+    
     public function behaviors()
     {
         return [
@@ -49,9 +52,17 @@ class DashboardController extends Controller
 
     public function actionIndex()
     {
-        $this->layout = "dashboard";
-        return $this->render('dashboard');
+        return $this->render('dashboard', [
+            'user' => Yii::$app->user,
+        ]);
     }
+    
+    public function actionProfile()
+    {
+        return $this->render('dashboard', [
+            'user' => Yii::$app->user,
+        ]);
+    }    
 
     public function actionLogin()
     {
