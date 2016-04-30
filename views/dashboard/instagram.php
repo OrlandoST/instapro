@@ -10,6 +10,7 @@ $this->title = 'Instapro';
 ?>
 <div class="row">
   <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
         <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
 
           <div class="profile_img">
@@ -108,12 +109,13 @@ $this->title = 'Instapro';
               <div class="clear"></div>
               <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                 <?= Html::activeLabel($model, 'password', ['label' => 'Пароль:']) ?>
-                <?= Html::activePasswordInput($model, 'password', ['class'=>'form-control']) ?><span class="fa fa-key form-control-feedback left" aria-hidden="true"></span>
+                <?= Html::activePasswordInput($model, 'password', ['class'=>'form-control has-feedback-left']) ?><span class="fa fa-key form-control-feedback left" aria-hidden="true"></span>
                 <?= Html::error($model, 'password') ?>
               </div><div class="clear"></div>
               <input type="submit" class="btn btn-success" value="Изменить данные">
            <?php ActiveForm::end(); ?>
            </div>
         </div>
+    </div>    
   </div>
 </div>
