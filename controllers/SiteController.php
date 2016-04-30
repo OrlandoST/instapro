@@ -65,12 +65,6 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionDashboard()
-    {
-        $this->layout = "dashboard";
-        return $this->render('dashboard');
-    }
-    
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
@@ -105,10 +99,7 @@ class SiteController extends Controller
                 throw new \Exception('Error login');
             } 
         }
-        //$this->redirect(Url::to(['dashboard/index']));
-        /*return $this->render('signup', [
-            'model' => $model,
-        ]);*/
+
     }
     
     public function actionLogout()
