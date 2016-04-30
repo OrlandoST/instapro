@@ -6,8 +6,8 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
+use app\models\SignupForm;
+use app\models\InstagramAccountForm;
 
 class DashboardController extends Controller
 {
@@ -21,7 +21,7 @@ class DashboardController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'profile', 'create', 'update', 'delete'],
+                        'actions' => ['index', 'profile', 'instagram', 'update', 'delete'],
                         'allow' => true,
                         'roles' => ['user'],
                     ],
@@ -58,10 +58,27 @@ class DashboardController extends Controller
     
     public function actionProfile()
     {
+        $model = new SignupForm();
+        if ($model->load(Yii::$app->request->post())) {
+            $model->validate();
+        }
         return $this->render('profile', [
             'user' => Yii::$app->user,
+            'model' => $model,
         ]);
-    }    
+    }
+    
+    public function actionInstagram()
+    {
+        $model = new InstagramAccountForm();
+        if ($model->load(Yii::$app->request->post())) {
+            $model->validate();
+        }
+        return $this->render('instagram', [
+            'user' => Yii::$app->user,
+            'model' => $model,
+        ]);
+    }      
 
     public function actionLogin()
     {

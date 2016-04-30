@@ -16,14 +16,11 @@ use yii\widgets\ActiveForm;
      <span class=" fa fa-angle-down"></span>
    </a>
    <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-     <li><a href="#">
-     <i class="fa fa-bookmark pull-right"></i> Помощь</a>
+     <li><a href="#"><i class="fa fa-bookmark pull-right"></i> Помощь</a>
      </li>
-     <li><a href="/profile/settings">
-     <i class="fa fa-cogs pull-right"></i> Настройки профиля</a>
+     <li><a href="<?=Url::to(['dashboard/profile'])?>"><i class="fa fa-cogs pull-right"></i> Настройки профиля</a>
      </li>
-     <li><a href="<?=Url::to(['site/logout']) ?>">
-     <i class="fa fa-sign-out pull-right"></i> Выход</a>
+     <li><a href="<?=Url::to(['site/logout']) ?>"><i class="fa fa-sign-out pull-right"></i> Выход</a>
      </li>
    </ul>
    </li>

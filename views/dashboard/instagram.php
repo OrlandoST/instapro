@@ -96,30 +96,20 @@ $this->title = 'Instapro';
         </div>
         <div class="col-md-9 col-sm-9 col-xs-12">
             <div class="row">
-              <h2>Edit user profile</h2>
+              <h2>Edit Instagram Account</h2>
             </div>
             <div class="row">
             <?php $form = ActiveForm::begin(['id' => 'form-signup', 'action' => Url::to(['dashboard/profile'])]); ?>
               <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                <?= Html::activeLabel($model, 'username', ['label' => 'Имя пользователя:']) ?>
-                <?= Html::activeTextInput($model, 'username', ['class'=>'form-control  has-feedback-left']) ?><span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-                <?= Html::error($model, 'username') ?>
-              </div>
-              <div class="clear"></div>
-              <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                <?= Html::activeLabel($model, 'username', ['label' => 'Ваш email:']) ?>
-                <?= Html::activeTextInput($model, 'email', ['class'=>'form-control']) ?><span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
-                <?= Html::error($model, 'email') ?>
+                <?= Html::activeLabel($model, 'account', ['label' => 'Название аккаунта:']) ?>
+                <?= Html::activeTextInput($model, 'account', ['class'=>'form-control  has-feedback-left']) ?><span class="fa fa-instagram form-control-feedback left" aria-hidden="true"></span>
+                <?= Html::error($model, 'account') ?>
               </div>
               <div class="clear"></div>
               <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                 <?= Html::activeLabel($model, 'password', ['label' => 'Пароль:']) ?>
-                <?= Html::activePasswordInput($model, 'password', ['class'=>'form-control']) ?>
+                <?= Html::activePasswordInput($model, 'password', ['class'=>'form-control']) ?><span class="fa fa-key form-control-feedback left" aria-hidden="true"></span>
                 <?= Html::error($model, 'password') ?>
-              </div><div class="clear"></div>
-              <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                <label for="confirm">Повторите пароль:</label>
-                <input type="password" class="form-control" name="confirm">
               </div><div class="clear"></div>
               <input type="submit" class="btn btn-success" value="Изменить данные">
            <?php ActiveForm::end(); ?>
