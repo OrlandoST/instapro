@@ -19,12 +19,11 @@ class DashboardController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout'],
                 'rules' => [
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['index', 'profile', 'create', 'update', 'delete'],
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['user'],
                     ],
                 ],
             ],
@@ -59,7 +58,7 @@ class DashboardController extends Controller
     
     public function actionProfile()
     {
-        return $this->render('dashboard', [
+        return $this->render('profile', [
             'user' => Yii::$app->user,
         ]);
     }    
